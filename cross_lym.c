@@ -1,4 +1,4 @@
-/* 
+/*
 	cross.c: cross the animals gene, create new children for the next generation
 */
 
@@ -12,17 +12,17 @@ void generate_gene(animal *child, animal *a1, animal *a2) {
 
 	if (child && a1 && a2) {
 		for (i = 0; i < gene_num; i ++) {
-			if (a1->gene[i] == a2->gene[i]) 
+			if (a1->gene[i] == a2->gene[i])
 				child->gene[i] = a1->gene[i];
-			else 
+			else
 				child->gene[i] = 0;
 		}
 		for (i = 0; i < gene_num; i ++) {
 			if (child->gene[i] == 0) {
 				child->gene[i] = rand() % move_num + 1;
-				for (j = 0; j < gene_num; j ++) 
+				for (j = 0; j < gene_num; j ++)
 					if (i != j && child->gene[i] == child->gene[j]) {	// if find the number appeared before, regenerate it and re-check
-						child->gene[i] = rand % move_num + 1;
+						child->gene[i] = rand()% move_num + 1;
 						j = 0;
 					}
 			}
