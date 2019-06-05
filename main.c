@@ -8,13 +8,20 @@ int time_table[gene_num][move_num]={{31,41,25,30},{19,55,3,34},{23,42,27,6},{13,
 
 int main()
 {
+	initialize();
 	srand((unsigned)time(NULL));
+	animal *a[gene_num];
 	int i;
-	for(i=0;i<10;i++)
+	int j;
+	for(i=0;i<generation_num;i++)
 	{
-		printf("%d ",rand());
+		a[i]=produce_animal();
+		for(j=0;j<gene_num;j++)
+		{
+			printf("%d ",a[i]->gene[j]);
+		}
+		putchar('\n');
 	}
-	putchar('\n');
 	return 0;
 }
 
