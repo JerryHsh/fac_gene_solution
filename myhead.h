@@ -6,7 +6,7 @@
 #define gene_num 5				//The number of item
 #define move_num 4				//The number of tackle movement
 #define king_num 1				//Rank num move to the next generation
-//#define nobel_num 5				//Rank who have the right to have child except 4 5
+#define nobel_num 6				//Rank who have the right to have child except 4 5
 #define generation_time 50		//Times of evolution
 
 extern int time_table[gene_num][move_num];

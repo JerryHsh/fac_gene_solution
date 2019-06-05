@@ -64,5 +64,16 @@ void judge_man(animal_kingdom *a)							//rank from big to small
 				a->population[j+1]=swap;
 			}
 		}
+	for(i=0,total=0;i<nobel_num;i++)
+		total+=a->population[i]->adapt;
+	for(i=0;i<generation_num;i++)
+	{
+		if(i<nobel_num)
+		{
+			a->population[i]->p=a->population[i]->adapt/total;
+		}
+		else
+			a->population[i]->p=0;
+	}
 }
 
