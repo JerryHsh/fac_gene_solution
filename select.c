@@ -13,6 +13,4 @@ void select_animal(animal_kingdom *a)
 		else
 			q[i]=q[i-1]+a->population[i]->p;
 	}
-	srand((unsigned)time(NULL));
-
 }
