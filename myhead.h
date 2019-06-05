@@ -29,13 +29,6 @@ typedef struct node3
 	int a[gene_num];														//store the order
 }order;
 
-typedef struct circle
-{
-	int a;
-	int flag;
-	//struct circle *next;
-}random_gene;
-
 
 void judge_man(animal_kingdom *);															//rank
 void fresh(animal *);

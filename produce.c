@@ -4,8 +4,18 @@
 #include<windows.h>
 #include"myhead.h"
 //correct
+
+
+typedef struct circle
+{
+	int a;
+	int flag;
+	//struct circle *next;
+}random_gene;
+
 static random_gene * gene_store[gene_num];
 static int gene_store_pointer;					//指出循环中所指对象
+
 
 void initialize(void)
 {
@@ -46,9 +56,7 @@ animal * produce_animal(void)
             gene_store_pointer++;
             if(gene_store_pointer==gene_num)
                 gene_store_pointer=0;
-			Sleep(i*45);
         }
-        Sleep(i*52);
         a->gene[i]=gene_store[gene_store_pointer]->a;
         gene_store[gene_store_pointer]->flag=0;
     }
