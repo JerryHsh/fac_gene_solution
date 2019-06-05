@@ -60,6 +60,7 @@ animal * produce_animal(void)
         a->gene[i]=gene_store[gene_store_pointer]->a;
         gene_store[gene_store_pointer]->flag=0;
     }
+    calculate(a);
     return a;
 }
 

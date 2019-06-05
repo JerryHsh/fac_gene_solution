@@ -10,16 +10,30 @@ int main()
 {
 	initialize();
 	srand((unsigned)time(NULL));
-	animal *a[gene_num];
+	animal_kingdom * a;
+	a=produce_kingdom();
 	int i;
 	int j;
 	for(i=0;i<generation_num;i++)
 	{
-		a[i]=produce_animal();
 		for(j=0;j<gene_num;j++)
 		{
-			printf("%d ",a[i]->gene[j]);
+			printf("%d ",a->population[i]->gene[j]);
 		}
+		printf("%lf",a->population[i]->adapt);
+		putchar('\n');
+	}
+	judge_man(a);
+	putchar('\n');
+	for(i=0;i<generation_num;i++)
+	{
+		for(j=0;j<gene_num;j++)
+		{
+			printf("%d ",a->population[i]->gene[j]);
+		}
+		printf("%d ",a->population[i]->c[4][3]);
+		printf("%lf ",a->population[i]->adapt);
+		printf("%.4lf",a->population[i]->p);
 		putchar('\n');
 	}
 	return 0;
