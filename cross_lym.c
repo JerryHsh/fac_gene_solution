@@ -19,10 +19,10 @@ void generate_gene(animal *child, animal *a1, animal *a2) {
 		}
 		for (i = 0; i < gene_num; i ++) {
 			if (child->gene[i] == 0) {
-				child->gene[i] = rand() % move_num + 1;
+				child->gene[i] = rand() % gene_num + 1;
 				for (j = 0; j < gene_num; j ++)
 					if (i != j && child->gene[i] == child->gene[j]) {	// if find the number appeared before, regenerate it and re-check
-						child->gene[i] = rand()% move_num + 1;
+						child->gene[i] = rand()% gene_num + 1;
 						j = 0;
 					}
 			}
