@@ -10,8 +10,6 @@
 #define nobel_num 6				//Rank who have the right to have child except 4 5
 #define generation_time 50		//Times of evolution
 
-
-
 typedef struct node
 {
 	int gene[gene_num];														//describe the order
@@ -31,7 +29,6 @@ typedef struct node3
 	int a[gene_num];														//store the order
 }order;
 
-
 typedef struct circle
 {
 	int a;
@@ -42,7 +39,6 @@ typedef struct circle
 extern int time_table[gene_num][move_num];
 extern random_gene * gene_store[gene_num];
 extern int gene_store_pointer;					//指出循环中所指对象
-
 
 void judge_man(animal_kingdom *);															//rank
 void fresh(animal *);
@@ -57,5 +53,8 @@ void re_initialize(void);
 void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
 animal * produce_child_random(animal *,animal *);
 animal * produce_child_traditon(animal *,animal *);
+
+/* print statistics information on the screen */
+void show_kingdom(animal_kingdom *ak);
 
 #endif // MYHEAD_H_INCLUDED

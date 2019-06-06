@@ -26,7 +26,7 @@ animal *pick(animal_kingdom *ak) {
 }
 
 animal_kingdom *recursive(animal_kingdom *old) {
-	animal_kindom *new;
+	animal_kingdom *new;
 	animal *pa1, *pa2;	// the parents
 	int i, j, h;
 
