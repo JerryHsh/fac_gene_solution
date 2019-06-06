@@ -1,4 +1,4 @@
-/* 
+/*
 	recursive.c: perform the process that a new generation born from the old one
 	delete old animal_kingdom after successfully generating the new one.
 */
@@ -17,7 +17,7 @@ animal *pick(animal_kingdom *ak) {
 
 	if (ak) {
 		rand_num = (double)(rand() % ACCURANCY) / ACCURANCY;
-		while ((rand_num -= ak->population[i]->p > 0) && i > nobel_num) 
+		while ((rand_num -= ak->population[i]->p > 0) && i > nobel_num)
 			i ++;
 		return ak->population[i];
 	}
@@ -36,10 +36,10 @@ animal_kingdom *recursive(animal_kingdom *old) {
 			/* for king */
 			for (i = 0; i < king_num; i ++) {
 				for (j = 0; j < gene_num; j ++) {
-					new->population[i]->gene[j] = 
+					new->population[i]->gene[j] =
 						old->population[i]->gene[j];
-					for (h = 0; h < move_num; h ++) 
-						new->population[i]->c[j][h] = 
+					for (h = 0; h < move_num; h ++)
+						new->population[i]->c[j][h] =
 							old->population[i]->c[j][h];
 				}
 				new->population[i]->adapt = old->population[i]->adapt;	/* adapt */
@@ -61,7 +61,7 @@ animal_kingdom *recursive(animal_kingdom *old) {
 			new->lowest_adapt = new->population[nobel_num - 1]->adapt;
 			return new;
 		}
-		else 
+		else
 			fprintf(stderr, "recursive(): failed to generate new animal kingdom\n");
 	}
 

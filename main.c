@@ -5,10 +5,21 @@
 
 int time_table[gene_num][move_num]={{31,41,25,30},{19,55,3,34},{23,42,27,6},{13,22,14,13},{33,5,57,19}};
 
-int main(void) {
+int main(void)
+{
 	initialize();
-	animal_kingdom *ak = produce_kingdom();
-	show_kingdom(ak);
-
+	srand((unsigned)time(NULL));
+	animal_kingdom * old;
+	old=produce_kingdom();
+	int i;
+	animal_kingdom * last_generation;
+	animal_kingdom * middle;
+	for(i=0;i<generation_time;i++)
+	{
+		middle=recursive(old);
+		old=middle;
+	}
+	last_generation=old;
+	print(last_generation->population[0]);
 	return 0;
 }
