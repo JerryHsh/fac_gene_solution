@@ -12,9 +12,7 @@ int main(void) {
 /*
 int main()
 {
-
 	int  i;
-	int j;
 	initialize();
 	srand((unsigned)time(NULL));
 	animal *a,*b,*c;
@@ -30,27 +28,7 @@ int main()
 		printf("%d ",b->gene[i]);
 	}
 	putchar('\n');
-	c=produce_animal();
-	for(i=0;i<gene_num;i++)
-	{
-		printf("%d ",c->gene[i]);
-	}
-	putchar('\n');
-	putchar('\n');
-	generate_gene(c,a,b);
-
-	for(i=0;i<gene_num;i++)
-	{
-		printf("%d ",a->gene[i]);
-	}
-	putchar('\n');
-
-	for(i=0;i<gene_num;i++)
-	{
-		printf("%d ",b->gene[i]);
-	}
-	putchar('\n');
-	calculate(c);
+	c=produce_child_random(a,b);
 	for(i=0;i<gene_num;i++)
 	{
 		printf("%d ",c->gene[i]);

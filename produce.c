@@ -4,17 +4,8 @@
 #include"myhead.h"
 //correct
 
-
-typedef struct circle
-{
-	int a;
-	int flag;
-	//struct circle *next;
-}random_gene;
-
-static random_gene * gene_store[gene_num];
-static int gene_store_pointer;					//指出循环中所指对象
-
+random_gene * gene_store[gene_num];
+int gene_store_pointer;					//指出循环中所指对象
 
 void initialize(void)
 {
@@ -72,3 +63,15 @@ animal_kingdom * produce_kingdom(void)
         a->population[i]=produce_animal();
 	return a;
 }
+
+
+animal * produce_child_random(animal *pa1,animal * pa2)
+{
+    animal *c;
+    c=(animal *)malloc(sizeof(animal));
+    generate_gene(c,pa1,pa2);
+    fresh(c);
+    calculate(c);
+    return c;
+}
+

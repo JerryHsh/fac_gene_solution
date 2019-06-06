@@ -1,6 +1,7 @@
 #ifndef MYHEAD_H_INCLUDED
 #define MYHEAD_H_INCLUDED
-
+#include<stdio.h>
+#include<stdlib.h>
 
 #define generation_num 10   	//The number of the animal in a generation
 #define gene_num 5				//The number of item
@@ -9,7 +10,7 @@
 #define nobel_num 6				//Rank who have the right to have child except 4 5
 #define generation_time 50		//Times of evolution
 
-extern int time_table[gene_num][move_num];
+
 
 typedef struct node
 {
@@ -31,6 +32,18 @@ typedef struct node3
 }order;
 
 
+typedef struct circle
+{
+	int a;
+	int flag;
+	//struct circle *next;
+}random_gene;
+
+extern int time_table[gene_num][move_num];
+extern random_gene * gene_store[gene_num];
+extern int gene_store_pointer;					//指出循环中所指对象
+
+
 void judge_man(animal_kingdom *);															//rank
 void fresh(animal *);
 void calculate(animal *);
@@ -42,5 +55,7 @@ animal * produce_animal(void);
 animal_kingdom *produce_kingdom(void);
 void re_initialize(void);
 void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
+animal * produce_child_random(animal *,animal *);
+animal * produce_child_traditon(animal *,animal *);
 
 #endif // MYHEAD_H_INCLUDED

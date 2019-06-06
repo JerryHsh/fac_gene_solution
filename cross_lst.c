@@ -1,7 +1,5 @@
 #include "myhead.h"
 
-#include <stdlib.h>
-
 void generate_gene(animal *child, animal *a, animal *b)
 {
     int weight[gene_num], flag[gene_num], i, j, sign;
