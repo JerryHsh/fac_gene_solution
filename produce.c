@@ -63,3 +63,15 @@ animal_kingdom * produce_kingdom(void)
         a->population[i]=produce_animal();
 	return a;
 }
+
+
+animal * produce_child_random(animal *pa1,animal * pa2)
+{
+    animal *c;
+    c=(animal *)malloc(sizeof(animal));
+    generate_gene(c,pa1,pa2);
+    fresh(c);
+    calculate(c);
+    return c;
+}
+

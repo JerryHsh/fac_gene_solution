@@ -1,6 +1,7 @@
 #ifndef MYHEAD_H_INCLUDED
 #define MYHEAD_H_INCLUDED
-
+#include<stdio.h>
+#include<stdlib.h>
 
 #define generation_num 10   	//The number of the animal in a generation
 #define gene_num 5				//The number of item
@@ -53,6 +54,7 @@ animal * produce_animal(void);
 animal_kingdom *produce_kingdom(void);
 void re_initialize(void);
 void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
-animal * produce_child(animal *,animal *);
+animal * produce_child_random(animal *,animal *);
+animal * produce_child_traditon(animal *,animal *);
 
 #endif // MYHEAD_H_INCLUDED

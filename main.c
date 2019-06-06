@@ -8,7 +8,6 @@ int time_table[gene_num][move_num]={{31,41,25,30},{19,55,3,34},{23,42,27,6},{13,
 int main()
 {
 	int  i;
-	int j;
 	initialize();
 	srand((unsigned)time(NULL));
 	animal *a,*b,*c;
@@ -24,13 +23,13 @@ int main()
 		printf("%d ",b->gene[i]);
 	}
 	putchar('\n');
-	c=produce_child(a,b);
+	c=produce_child_random(a,b);
 	for(i=0;i<gene_num;i++)
 	{
 		printf("%d ",c->gene[i]);
 	}
 	putchar('\n');
-	
+
 	/*
 	initialize();
 	animal_kingdom * a;

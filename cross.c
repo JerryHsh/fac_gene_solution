@@ -2,12 +2,12 @@
 #include<stdlib.h>
 #include"myhead.h"
 
-animal * produce_child(animal *pa1,animal *pa2)
+animal * produce_child_traditon(animal *pa1,animal *pa2)
 {
     re_initialize();
     animal *c;
     c=(animal *)malloc(sizeof(animal));
-    int i,j;
+    int i;
     int step;
     int flag=0;                 //if flag = 0 needn't change
     for(i=0;i<gene_num;i++)
@@ -46,3 +46,4 @@ animal * produce_child(animal *pa1,animal *pa2)
     }
     return c;
 }
+
