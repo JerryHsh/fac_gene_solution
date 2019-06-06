@@ -5,6 +5,7 @@
 
 int time_table[gene_num][move_num]={{31,41,25,30},{19,55,3,34},{23,42,27,6},{13,22,14,13},{33,5,57,19}};
 
+/*
 int main()
 {
 	initialize();
@@ -37,6 +38,7 @@ int main()
 	}
 	return 0;
 }
+*/
 
 
 
