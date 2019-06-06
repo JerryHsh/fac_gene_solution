@@ -17,10 +17,7 @@ animal *pick(animal_kingdom *ak) {
 
 	if (ak) {
 		rand_num = (double)(rand() % ACCURANCY) / ACCURANCY;
-		printf("rand_num = %lf\n", rand_num);
-		while (rand_num - ak->population[i]->p > 0 && i < nobel_num) {
-			rand_num -= ak->population[i]->p;
-			printf("rand_num: %lf\n", rand_num);
+		while ((rand_num -= (double)ak->population[i]->p > 0) && i > nobel_num)
 			i ++;
 		}
 		printf("i = %d\n", i);
