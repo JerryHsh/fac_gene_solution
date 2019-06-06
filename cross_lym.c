@@ -1,7 +1,7 @@
 /*
 	cross.c: cross the animals gene, create new children for the next generation
 */
-
+//wrong
 #include <stdlib.h>
 #include <stdio.h>
 
