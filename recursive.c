@@ -17,7 +17,7 @@ animal *pick(animal_kingdom *ak) {
 
 	if (ak) {
 		rand_num = (double)(rand() % ACCURANCY) / ACCURANCY;
-		while ((rand_num -= ak->population[i]->p > 0) && i > nobel_num)
+		while ((rand_num -= (double)ak->population[i]->p > 0) && i > nobel_num)
 			i ++;
 		return ak->population[i];
 	}
