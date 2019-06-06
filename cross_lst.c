@@ -1,6 +1,6 @@
 #include "myhead.h"
 
-void cross(animal *child, animal *a, animal *b)
+void generate_gene(animal *child, animal *a, animal *b)
 {
     int weight[gene_num], flag[gene_num], i, j, sign;
 	int p[gene_num], temp;
