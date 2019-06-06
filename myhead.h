@@ -57,5 +57,9 @@ void re_initialize(void);
 void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
 animal * produce_child_random(animal *,animal *);
 animal * produce_child_traditon(animal *,animal *);
+animal *pick(animal_kingdom *);
+
+animal_kingdom *recursive(animal_kingdom *);
+
 
 #endif // MYHEAD_H_INCLUDED
