@@ -52,6 +52,6 @@ void initialize(void);
 animal * produce_animal(void);
 animal_kingdom *produce_kingdom(void);
 void re_initialize(void);
-void generate_gene(animal *child, animal *a1, animal *a2);
+void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
 
 #endif // MYHEAD_H_INCLUDED
