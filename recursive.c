@@ -17,8 +17,13 @@ animal *pick(animal_kingdom *ak) {
 
 	if (ak) {
 		rand_num = (double)(rand() % ACCURANCY) / ACCURANCY;
-		while ((rand_num -= ak->population[i]->p > 0) && i > nobel_num)
+		printf("rand_num = %lf\n", rand_num);
+		while (rand_num - ak->population[i]->p > 0 && i < nobel_num) {
+			rand_num -= ak->population[i]->p;
+			printf("rand_num: %lf\n", rand_num);
 			i ++;
+		}
+		printf("i = %d\n", i);
 		return ak->population[i];
 	}
 
@@ -48,14 +53,16 @@ animal_kingdom *recursive(animal_kingdom *old) {
 			}
 			/* for the rest */
 			for (; i < generation_num; i ++) {
-				pa1 = pick(old);
-				pa2 = pick(old);
-				new->population[i] = produce_child_random(pa1, pa2);
-				if (new->population[i]->adapt < old->lowest_adapt) {
-					// if the child is even worse than the worst one in last generation
-					free(new->population[i]);
-					continue;
+				while (1) {
+					pa1 = pick(old);
+					pa2 = pick(old);
+					new->population[i] = produce_child_random(pa1, pa2);
+					if (new->population[i]->adapt >= old->lowest_adapt) 
+						break;
+					else 
+						free(new->population[i]);
 				}
+				printf("pa1: %p, pa2: %p\n", pa1, pa2);
 			}
 
 			judge_man(new);

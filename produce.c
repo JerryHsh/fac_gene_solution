@@ -61,7 +61,8 @@ animal_kingdom * produce_kingdom(void)
     int i;
     for(i=0;i<generation_num;i++)
         a->population[i]=produce_animal();
-	return a;
+	judge_man(a);
+    return a;
 }
 
 
