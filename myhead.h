@@ -3,11 +3,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define generation_num 10   	//The number of the animal in a generation
+#define generation_num 5   	//The number of the animal in a generation
 #define gene_num 5				//The number of item
 #define move_num 4				//The number of tackle movement
 #define king_num 1				//Rank num move to the next generation
-#define nobel_num 6				//Rank who have the right to have child except 4 5
+#define nobel_num 3				//Rank who have the right to have child except 4 5
 #define generation_time 50		//Times of evolution
 
 typedef struct node
@@ -21,7 +21,7 @@ typedef struct node
 typedef struct node2
 {
 	animal * population[generation_num];									//store the population Gene
-	int lowest_adapt;			// recording the lowest adapt fittable for having child
+	double lowest_adapt;			// recording the lowest adapt fittable for having child
 }animal_kingdom;
 
 typedef struct node3
@@ -54,7 +54,6 @@ void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene 
 animal * produce_child_random(animal *,animal *);
 animal * produce_child_traditon(animal *,animal *);
 animal *pick(animal_kingdom *);
-
 animal_kingdom *recursive(animal_kingdom *);
 
 /* print statistics information on the screen */
