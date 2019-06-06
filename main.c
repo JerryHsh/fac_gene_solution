@@ -5,6 +5,11 @@
 
 int time_table[gene_num][move_num]={{31,41,25,30},{19,55,3,34},{23,42,27,6},{13,22,14,13},{33,5,57,19}};
 
+int main(void) {
+	
+}
+
+/*
 int main()
 {
 
@@ -52,7 +57,6 @@ int main()
 	}
 	putchar('\n');
 
-	/*
 	initialize();
 	animal_kingdom * a;
 	a=produce_kingdom();
@@ -80,6 +84,5 @@ int main()
 		printf("%.4lf",a->population[i]->p);
 		putchar('\n');
 	}
-	*/
 	return 0;
-}
+}*/

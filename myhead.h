@@ -22,6 +22,7 @@ typedef struct node
 typedef struct node2
 {
 	animal * population[generation_num];									//store the population Gene
+	int lowest_adapt;			// recording the lowest adapt fittable for having child
 }animal_kingdom;
 
 typedef struct node3
