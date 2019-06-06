@@ -35,6 +35,7 @@ animal_kingdom *recursive(animal_kingdom *old) {
 		if (new) {
 			/* for king */
 			for (i = 0; i < king_num; i ++) {
+				new->population[i] = (animal*)malloc(sizeof(animal));
 				for (j = 0; j < gene_num; j ++) {
 					new->population[i]->gene[j] =
 						old->population[i]->gene[j];

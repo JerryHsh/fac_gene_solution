@@ -9,17 +9,18 @@ int main(void)
 {
 	initialize();
 	srand((unsigned)time(NULL));
-	animal_kingdom * old;
-	old=produce_kingdom();
+	animal_kingdom * ak;
 	int i;
-	animal_kingdom * last_generation;
-	animal_kingdom * middle;
-	for(i=0;i<generation_time;i++)
-	{
-		middle=recursive(old);
-		old=middle;
+
+	ak = produce_kingdom();
+	show_kingdom(ak);
+	getchar();
+	for (i = 0; i < generation_time; i ++) {
+		ak = recursive(ak);
+		printf("generation %d:\n", i + 1);
+		show_kingdom(ak);
+		getchar();
 	}
-	last_generation=old;
-	print(last_generation->population[0]);
+
 	return 0;
 }
