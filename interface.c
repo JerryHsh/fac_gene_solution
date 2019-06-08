@@ -22,7 +22,6 @@ int _fit(const int *gene1, const int *gene2) {
 void show_kingdom(animal_kingdom *ak) {
 	static int pool[generation_num][gene_num + 2];
 	int i, j, h;
-	int fit;
 
 	/* initialize */
 	for (i = 0; i < generation_num; i ++) 
@@ -51,7 +50,7 @@ void show_kingdom(animal_kingdom *ak) {
 		for (j = 0; j < gene_num; j ++) 
 			printf("%d ", pool[i][j]);
 		printf(":");
-		printf("%d: ", pool[i][gene_num + 1]);
+		//printf("%d: ", pool[i][gene_num + 1]);
 		for (j = 0; j < pool[i][gene_num]; j ++) 
 			printf("* ");
 		putchar('\n');
