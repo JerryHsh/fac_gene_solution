@@ -75,3 +75,15 @@ void print(animal *a)
 		}
 	}
 }
+
+/* manually set the time table */
+void get_time_table(int time_table[gene_num][move_num]) {
+	int i, j;
+
+	printf("manually set time table:\n");
+	for (i = 0; i < gene_num; i ++) {
+		for (j = 0; j < move_num; j ++) 
+			scanf("%d", &time_table[i][j]);
+	}
+	printf("\nchanges saved\n\n");
+}

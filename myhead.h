@@ -40,19 +40,50 @@ extern int time_table[gene_num][move_num];
 extern random_gene * gene_store[gene_num];
 extern int gene_store_pointer;					//指出循环中所指对象
 
-void judge_man(animal_kingdom *);															//rank
+/* calculate.c: */
+/* calculate the time comsuption matrix (c[][]) of an animal */
 void fresh(animal *);
+
+/* calculate the estimated adapt of an animal */
 void calculate(animal *);
-void print(animal *);
+
+/* ranking the whole animal kingdom, and sort its animals in 
+	descending order by adapt */
+void judge_man(animal_kingdom *a);
+
+
+/* produce.c: */
+
+/* initialize the gene_store structure */
 void initialize(void);
-animal * produce_animal(void);
-animal_kingdom *produce_kingdom(void);
+
+/* re-initialize the gene_store structure */
 void re_initialize(void);
-void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
-animal * produce_child_random(animal *,animal *);
+
+/* produce animal without parents */
+animal * produce_animal(void);
+
+/* produce an animal kingdom without an older kingdom */
+animal_kingdom *produce_kingdom(void);
+
+/* produce an animal out of parents */
+animal *produce_child_random(animal *pa1, animal *pa2);
+
+/* generate the animal's gene based on its parents */
+void generate_gene(animal *child, animal *a1, animal *a2);
+
+/* generate a new kingdom out of the older one */
 animal_kingdom *recursive(animal_kingdom *);
+
+
+/* interface.c: */
 
 /* print statistics information on the screen */
 void show_kingdom(animal_kingdom *ak);
+
+/* print animal's matrix c to the screen */
+void print(animal *a);
+/* manually set the time table */
+void get_time_table(int time_table[gene_num][move_num]);
 
 #endif // MYHEAD_H_INCLUDED
