@@ -11,7 +11,7 @@
 #define ACCURANCY 1000000
 
 /* pick out an animal */
-animal *pick(animal_kingdom *ak) {
+animal *_pick(animal_kingdom *ak) {
 	double rand_num;
 	int i = 0;
 
@@ -50,15 +50,15 @@ animal_kingdom *recursive(animal_kingdom *old) {
 			/* for the rest */
 			for (; i < generation_num; i ++) {
 				while (1) {
-					pa1 = pick(old);
-					pa2 = pick(old);
+					pa1 = _pick(old);
+					pa2 = _pick(old);
 					new->population[i] = produce_child_random(pa1, pa2);
 					if (new->population[i]->adapt >= old->lowest_adapt)
 						break;
 					else
 						free(new->population[i]);
 				}
-				printf("pa1: %p, pa2: %p\n", pa1, pa2);
+				// printf("pa1: %p, pa2: %p\n", pa1, pa2);
 			}
 
 			judge_man(new);

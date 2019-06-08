@@ -3,4 +3,4 @@ main:
 	gcc *.o -o test
 
 clean: 
-	rm *.o
+	rm *.o test

@@ -51,10 +51,25 @@ void show_kingdom(animal_kingdom *ak) {
 		for (j = 0; j < gene_num; j ++) 
 			printf("%d ", pool[i][j]);
 		printf(":");
-		putchar(':');
 		printf("%d: ", pool[i][gene_num + 1]);
 		for (j = 0; j < pool[i][gene_num]; j ++) 
 			printf("* ");
 		putchar('\n');
+	}
+}
+
+/* print animal's matrix c to the screen */
+void print(animal *a)
+{
+	int i,j;
+	for(i=0;i<gene_num;i++)
+	{
+		for(j=0;j<move_num;j++)
+		{
+			if(j!=move_num-1)
+				printf("%d ",(a->c)[i][j]);
+			else
+				printf("%d\n",(a->c)[i][j]);
+		}
 	}
 }

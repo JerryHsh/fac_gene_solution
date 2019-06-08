@@ -3,12 +3,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define generation_num 5   	//The number of the animal in a generation
-#define gene_num 5				//The number of item
-#define move_num 4				//The number of tackle movement
-#define king_num 1				//Rank num move to the next generation
-#define nobel_num 3				//Rank who have the right to have child except 4 5
-#define generation_time 50		//Times of evolution
+#define generation_num 	5   		//The number of the animal in a generation
+#define gene_num 	5		//The number of item
+#define move_num 	4		//The number of tackle movement
+#define king_num 	1		//Rank num move to the next generation
+#define nobel_num 	3		//Rank who have the right to have child except 4 5
+#define generation_time 15		//Times of evolution
 
 typedef struct node
 {
@@ -44,16 +44,12 @@ void judge_man(animal_kingdom *);															//rank
 void fresh(animal *);
 void calculate(animal *);
 void print(animal *);
-void create_order(animal *);
-void select_animal(animal_kingdom *);
 void initialize(void);
 animal * produce_animal(void);
 animal_kingdom *produce_kingdom(void);
 void re_initialize(void);
 void generate_gene(animal *child, animal *a1, animal *a2);	// generate the gene for the child
 animal * produce_child_random(animal *,animal *);
-animal * produce_child_traditon(animal *,animal *);
-animal *pick(animal_kingdom *);
 animal_kingdom *recursive(animal_kingdom *);
 
 /* print statistics information on the screen */

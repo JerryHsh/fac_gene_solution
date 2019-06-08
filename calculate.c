@@ -1,8 +1,12 @@
+/* 
+	calculate.c: some functions for calculating the elements of the animal
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include"myhead.h"
 
-
+/* calculate the time matrix (c[][]) of an animal */
 void fresh(animal *a)
 {
 	int i,j;
@@ -15,7 +19,8 @@ void fresh(animal *a)
 	}
 }
 
-
+/* calculate the estimated adapt of an animal 
+*/
 void calculate(animal *a)			//correct
 {
 	int i,j;
@@ -42,8 +47,9 @@ void calculate(animal *a)			//correct
 	a->adapt=1.0/a->c[gene_num-1][move_num-1];
 }
 
-
-
+/* ranking the whole animal kingdom, and sort its animals in 
+	descending order by adapt
+*/
 void judge_man(animal_kingdom *a)							//rank from big to small
 {
 	double total;
@@ -76,4 +82,3 @@ void judge_man(animal_kingdom *a)							//rank from big to small
 			a->population[i]->p=0;
 	}
 }
-
