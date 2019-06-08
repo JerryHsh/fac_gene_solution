@@ -20,12 +20,15 @@ int _fit(const int *gene1, const int *gene2) {
 }
 
 void show_kingdom(animal_kingdom *ak) {
-	static int pool[generation_num][gene_num + 2];
+	static int pool[generation_num][gene_num + 1];	// record the gene and the times it appears in the kingdom
+	static double adapt_arr[generation_num];	// for recording the adapt of each gene
 	int i, j, h;
 
 	/* initialize */
-	for (i = 0; i < generation_num; i ++) 
+	for (i = 0; i < generation_num; i ++) {
 		pool[i][gene_num] = 0;
+		adapt_arr[i] = 0;
+	}
 	
 	for (i = 0; i < generation_num; i ++) {
 		// for every animal in the kingdom
@@ -42,15 +45,15 @@ void show_kingdom(animal_kingdom *ak) {
 		for (h = 0; h < gene_num; h ++) 
 			pool[j][h] = ak->population[i]->gene[h];
 		pool[j][gene_num] ++;
-		pool[j][gene_num + 1] = ak->population[i]->adapt;
+		adapt_arr[j] = ak->population[i]->adapt;
 		end_of_loop:;
 	}
 
-	for (i = 0; pool[i][gene_num]; i ++) {
+	for (i = 0; pool[i][gene_num] && i < generation_num; i ++) {
 		for (j = 0; j < gene_num; j ++) 
 			printf("%d ", pool[i][j]);
 		printf(":");
-		//printf("%d: ", pool[i][gene_num + 1]);
+		printf("%.6lf: ", adapt_arr[i]);
 		for (j = 0; j < pool[i][gene_num]; j ++) 
 			printf("* ");
 		putchar('\n');

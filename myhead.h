@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define generation_num 	5   		//The number of the animal in a generation
+#define generation_num 	10   		//The number of the animal in a generation
 #define gene_num 	5		//The number of item
 #define move_num 	4		//The number of tackle movement
 #define king_num 	1		//Rank num move to the next generation
