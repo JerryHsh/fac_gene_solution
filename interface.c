@@ -54,6 +54,7 @@ void show_kingdom(animal_kingdom *ak) {
 			printf("%d ", pool[i][j]);
 		printf(":");
 		printf("%.6lf: ", adapt_arr[i]);
+		printf("%.2lf: ", 1 / adapt_arr[i]);
 		for (j = 0; j < pool[i][gene_num]; j ++) 
 			printf("* ");
 		putchar('\n');
